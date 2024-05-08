@@ -1,0 +1,94 @@
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/variables-dark";
+@import "../../../node_modules/bootstrap/scss/mixins";
+// @import 'defaults';
+// Import your fonts here
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+// Colors
+
+// Primary
+
+$Purple-100: hsl(259, 100%, 65%);
+$Light-red-100: hsl(0, 100%, 67%);
+// Neutral
+$white-000: hsl(0, 0%, 100%);
+$Off-white-100: hsl(0, 0%, 94%);
+$Light-grey-100: hsl(0, 0%, 86%);
+$Smokey-grey-200: hsl(0, 1%, 44%);
+$Off-black-100: hsl(0, 0%, 8%);
+// Typography ### Body Copy 
+$Font-sizeinputs: 32px;
+$fontweights: (
+    'regular': 400,
+    'bold': 700,
+    'extra-bold': 800,
+);
+
+$custom-colors: (
+    "white-000": $white-000,
+    "Off-white-100": $Off-white-100,
+    "Light-grey-100": $Light-grey-100,
+    "Smokey-grey-200": $Smokey-grey-200,
+    "Off-black-100": $Off-black-100,
+    "Purple-100": $Purple-100,
+    "Light-red-100": $Light-red-100,
+);
+
+// $custom-breakpoints: (
+//     xs: 0,
+//     sm: 576px,
+//     md: 767px,
+//     lg: 1024px,
+//     xl: 1200px,
+//     xxl: 1300px
+// );
+
+$font-sizes: (
+    'small': 1.2rem,
+    'medium': 1.6rem,
+    'large': 5rem,
+    // Add more sizes as needed
+);
+$background-images: (
+);
+$custom-background-images: (
+    'default': url('../images/home/background-home-tablet.jpg'),
+    'alternative': url('../images/home/background-home-desktop.jpg'),
+    // Add more images as needed
+);
+
+$background-images: map-merge($background-images, $custom-background-images);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+// $grid-breakpoints: map-merge($grid-breakpoints, $custom-breakpoints);
+
+$spacers: (
+    0: 0,
+    1: 1rem,
+    2: 1.3rem,
+    3: 1.5rem,
+    4: 1.8rem,
+    "4_5": 2rem,
+    5: 2.5rem,
+    "5_5": 3.6rem,
+    6: 6rem,
+    7: 7rem,
+    8: 8rem,
+    9: 9rem,
+    10: 12rem,
+);
+
+.w-sm-wide {
+    @include media-breakpoint-up(sm) {
+        width: 100% !important;
+    }
+}
+
+.w-md-auto {
+    @include media-breakpoint-up(md) {
+        width: auto !important;
+    }
+}

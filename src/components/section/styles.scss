@@ -1,0 +1,57 @@
+@import '../../assets/styles/custom';
+
+section {
+    .ball {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        background-color: $Purple-100;
+        position: relative;
+        left: 38rem;
+        transform: translateY(-50% -50%);
+
+        &::after {
+            content: "";
+            width: 38rem;
+            height: .2rem;
+            background-color: $Light-grey-100;
+            position: absolute;
+            right: 6rem;
+            top: 2.5rem;
+            transform: translateY(-50%);
+        }
+
+        @media (max-width: 376px) {
+            // Bootstrap's breakpoint for mobile screens
+            left: 50%;
+            transform: translate(-50%, 29%);
+
+            &::after {
+                width: 38rem;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+
+        li {
+            font-size: 5rem;
+            font-weight: 800;
+            font-style: normal;
+
+            span {
+                font-size: 4rem;
+                font-weight: 800;
+                font-style: normal;
+                padding-right: 1rem;
+            }
+        }
+    }
+}

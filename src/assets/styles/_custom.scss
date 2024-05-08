@@ -1,0 +1,111 @@
+@import "./variables";
+
+html {
+    // This means 1rem = 10px
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+    @media (max-width: 900px) {
+        font-size: 59.5%;
+    }
+
+    @media (max-width: 700px) {
+        font-size: 55.5%;
+    }
+}
+
+html::-webkit-scrollbar {
+    width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: $Smokey-grey-200;
+    border-radius: 5rem;
+}
+
+*,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.6rem;
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        .d-#{$breakpoint}-none {
+            display: none !important;
+        }
+
+        .d-#{$breakpoint}-block {
+            display: block !important;
+        }
+    }
+}
+
+@each $name, $size in $font-sizes {
+    .font-size-#{$name} {
+        font-size: $size;
+    }
+
+    @media (min-width: 576px) {
+
+        // sm
+        .font-size-sm-#{$name} {
+            font-size: $size;
+        }
+    }
+
+    @media (min-width: 768px) {
+
+        // md
+        .font-size-md-#{$name} {
+            font-size: $size;
+        }
+    }
+
+    // Add more media queries for other sizes (lg, xl, etc.) if needed
+}
+
+@each $name, $weight in $fontweights {
+    .#{$name} {
+        font-weight: $weight;
+    }
+}
+
+@media (min-width: 968px) {
+    .w-md-auto {
+        width: auto !important;
+    }
+
+    .w-sm-wide {
+        width: 100% !important;
+    }
+}
+
+.app {
+    background-color: $Light-grey-100;
+
+    .app_row {
+        padding: 3rem;
+        background-color: $white-000;
+        border-radius: 2rem 2rem 2rem 2rem;
+        border-bottom-right-radius: 12rem;
+
+
+    }
+}

@@ -1,0 +1,13 @@
+@import '../../assets/styles/custom';
+
+main {
+    .border-red {
+        border-color: $Light-red-100 !important;
+    }
+
+    .error-message {
+        color: $Light-red-100;
+        font-size: .9rem;
+        font-weight: 700;
+    }
+}
