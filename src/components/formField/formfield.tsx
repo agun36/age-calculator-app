@@ -40,7 +40,7 @@ export const FormFieldSection = () => {
                 }}
             >
                 {({ handleSubmit, errors, touched }) => (
-                    <Form className="row g-3 p-0" onFocus={handleSubmit}>
+                    <Form className="row g-3 p-0" onBlur={handleSubmit}>
                         <div className="d-flex flex-column col">
                             <label htmlFor="day" className='regular text-Smokey-grey-200'>Day</label>
                             <Field type="text" name="day" id="day" className={`form-control p-3 ${errors.day && touched.day ? 'border-red' : ''}`} />
